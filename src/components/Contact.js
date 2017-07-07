@@ -6,6 +6,7 @@ import buttonLive from '../../public/images/button-icon-livechat.png';
 import mapHolder from '../../public/images/map-holder.png';
 
 import ContactForm from './ContactForm';
+import Button from './Button';
 
 class Contact extends Component {
     render () {
@@ -34,19 +35,19 @@ class Contact extends Component {
                             <div className="contact-text">
                                 <h3>Start a live chat with one <br/> of our Tech Team</h3>
                             </div>
-                                <button className="contact-buttons">Start<img src={buttonLive} alt="Save icon"/></button>
+                                <Button text='Start' source={buttonLive}/>
                         </span>
                         <span className="contact-sales">
                             <div className="contact-text">
                                 <h3>Start a Skype call with one of <br/> our Sales Team</h3>
                             </div>
-                                <button className="contact-buttons">Start<img src={buttonSkype} alt="Save icon"/></button>
+                                <Button text='Start' source={buttonSkype} />
                         </span>        
                         <span className="contact-services">
                             <div className="contact-text">
                                 <h3>Send an email to our <br/> Customer Services Team</h3>
                             </div>
-                                <button className="contact-buttons">Send<img src={buttonEmail} alt="Save icon"/></button>
+                                <Button text='Send' source={buttonEmail}/>
                         </span>
                     </span>
                 </div>
