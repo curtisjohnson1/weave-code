@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
 import logo from '../../public/images/logo.png';
-import search from '../../public/images/search.png';
 import settings from '../../public/images/settings.png';
+import NavItems from './NavItems';
+import Searchbar from './Searchbar';
 
 class Navbar extends Component {
     render () {
@@ -12,10 +13,7 @@ class Navbar extends Component {
                     <header>
                         <span>
                             <span className="nav-logo"><img src={logo} /></span>
-                            <span className="searchbar">
-                                <input className="nav-searchbar" type="text"/>
-                                <img src={search} />
-                            </span>
+                            <Searchbar />
                             <span className="nav-login">
                                 <a>Logged in: John Smith</a>
                                 <img src={settings}/>
@@ -23,19 +21,7 @@ class Navbar extends Component {
                         </span>
                     </header>
                 </div>
-                <div className="nav-menu">
-                    <ul>
-                        <li><a href="">Home</a></li>|
-                        <li><a href="">Projects</a></li>|
-                        <li><a href="">News</a></li>|
-                        <li><a href="">Careers</a></li>|
-                        <li><a href="">Contact Us</a></li>|
-                        <li><a href="">About Us</a></li>|
-                        <li><a href="">Case Studies</a></li>|
-                        <li><a href="">Blog</a></li>|
-                        <li><a href="">Customers</a></li>
-                    </ul>
-                </div>
+                <NavItems />
             </div>
 
         );
