@@ -105,14 +105,24 @@ class ContactForm extends Component {
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                         <select value={this.state.month} onChange={this.handleMonth} className="month">
                             <option value="January">January</option>
                             <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
                         </select>
                         <select value={this.state.year} onChange={this.handleYear} className="year">
                             <option value="2016">2016</option>
                             <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
                         </select>
                     </form>
                 </span>
