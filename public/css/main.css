@@ -93,13 +93,13 @@ footer {
     margin-top: 0;
 }
 
-.footer-text a {
+.footer-text label {
     margin: 1.5em;
     text-decoration: none;
     color: lightgray;
 }
 
-.footer-text a:hover {
+.footer-text label:hover {
     color: orange;
 }
 

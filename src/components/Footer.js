@@ -5,9 +5,9 @@ const Footer = () => {
             <div className="footer-container">
                 <footer>
                     <span className="footer-text">
-                        <a href="">Terms and Conditions</a> |
-                        <a href="">Privacy Policy</a> |
-                        <a href="">Copyright Weave Code 2017</a>
+                        <label>Terms and Conditions</label> |
+                        <label>Privacy Policy</label> |
+                        <label>Copyright Weave Code 2017</label>
                     </span>
                 </footer>
             </div>
