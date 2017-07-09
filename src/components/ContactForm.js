@@ -5,6 +5,8 @@ class ContactForm extends Component {
         super (props);
 
         this.state = {
+            days: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
+            months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             firstName: '',
             lastName: '',
             day: '',
@@ -67,9 +69,14 @@ class ContactForm extends Component {
     }
 
     handleSubmit (event) {
-        if (this.state.email === this.state.confirmEmail) {
-            alert('a brochure will be with you shortly');
-            event.preventDefault();
+        event.preventDefault();
+
+        this.checkSubmit(this.state);
+
+        if (this.state.email === this.state.confirmEmail && this.state.firstName &&
+            this.state.lastName && this.state.day && this.state.month && this.state.year) {
+            
+            alert('Thank you. A brochure will be with you shortly');
             
             this.setState({
                 firstName: '',
@@ -81,8 +88,23 @@ class ContactForm extends Component {
                 confirmEmail: ''                
             });
         }
-        else {
-            alert('please confirm your email');
+        if (this.state.email !== this.state.confirmEmail) {
+            alert('Please confirm your email');
+        }
+    }
+
+    checkSubmit (state) {
+        if (!state.firstName) {
+            alert('First Name is required');
+        }
+        if (!state.lastName) {
+            alert('Last Name is required');
+        }
+        if (!state.day || !state.month || !state.year) {
+            alert('Please insert your date of birth');
+        }
+        if (!state.email || !state.confirmEmail) {
+            alert('Please insert your email');
         }
     }
 
@@ -90,22 +112,26 @@ class ContactForm extends Component {
         return (
             <div className="contact-details-container">
                 <span className="contact-name">
+
                     <form onSubmit={this.handleSubmit}>
                         <label>First Name</label><br/>
                         <input value={this.state.firstName} onChange={this.handleFirstName} type="text"/><br/>
                         <br/>
+
                         <label>Last Name</label><br/>
                         <input value={this.state.lastName} onChange={this.handleLastName} type="text"/><br/>
                         <br/>
+
                         <label>Date of Birth</label><br/>
                         <select value={this.state.day} onChange={this.handleDay} className="day">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                            {this.state.days.map((day, i) => {
+                                return <option key={i} value={day}>{day}</option>;
+                            })}
                         </select>
                         <select value={this.state.month} onChange={this.handleMonth} className="month">
-                            <option value="January">January</option>
-                            <option value="February">February</option>
+                            {this.state.months.map((month, i) => {
+                                return <option key={i} value={month}>{month}</option>;
+                            })}
                         </select>
                         <select value={this.state.year} onChange={this.handleYear} className="year">
                             <option value="2016">2016</option>
