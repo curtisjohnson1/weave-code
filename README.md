@@ -1,6 +1,6 @@
 # Weaveability
 
-A simple HTML webpage built using React and CSS 
+A simple mockup of a HTML webpage built using React and CSS 
 
 ## Prerequisites
 
