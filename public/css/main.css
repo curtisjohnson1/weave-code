@@ -234,3 +234,11 @@ h3 {
     display: flex;
     justify-content: center;
 }
+
+.contact-name label {
+    font-weight: 600;
+}
+
+.contact-email label {
+    font-weight: 600;
+}
